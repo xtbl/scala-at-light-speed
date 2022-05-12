@@ -1,6 +1,6 @@
 package com.rockthejvm
 
-object ObjectOrientation extends app {
+object ObjectOrientation extends App {
   class Animal {
     val age: Int = 0
     def eat() = println("I'm eating")
@@ -8,9 +8,10 @@ object ObjectOrientation extends app {
 
   val anAnimal = new Animal
 
-  class Dog(val name: String) extends Animal
-  val aDog = new Dog("Lassie")
-  aDog.name
+  class Dog(val name: String) extends Animal {
+    val aDog = new Dog("Lassie")
+    // aDog.name
+  }
 
   val aDeclaredAnimal: Animal = new Dog("Hachi")
   aDeclaredAnimal.eat()
@@ -37,7 +38,8 @@ object ObjectOrientation extends app {
     )
   }
 
-  aCroc = new Crocodile
+  val aDog = new Dog("Perry")
+  val aCroc = new Crocodile
   aCroc.eat(aDog)
   aCroc eat aDog // infix notation, is the same. only available for methods with 1 argument
   aCroc ?! "What if we could fly?"
