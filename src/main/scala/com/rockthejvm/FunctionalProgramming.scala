@@ -45,5 +45,39 @@ object FunctionalProgramming extends App {
   // alternative syntax
   val aFilteredList2: List[Int] = List(1, 2, 3, 4, 5).filter(_ <= 3)
   // time: 16:05
+  val allPairs = List(1, 2, 3).flatMap(number =>
+    List('a', 'b', 'c').map(letter => s"$number-$letter")
+  )
+  println(allPairs)
+
+  // for comprehensions
+  val alternativePairs = for {
+    number <- List(1, 2, 3)
+    letter <- List('a', 'b', 'c')
+  } yield s"$number-$letter"
+
+  println(alternativePairs)
+
+  // Collections
+
+  val aList = List(1, 2, 3, 4, 5)
+  val firstElement = aList.head
+  val rest = aList.tail
+  val aPrependedList = 0 :: aList
+  val anExtendedList = 0 +: aList :+ 6
+
+  // sequences
+  val aSequence: Seq[Int] = Seq(1, 2, 3)
+  val accessedElemeent = aSequence(1)
+
+  // vectors
+  // sets
+  // tuples
+  // ranges
+  // maps
+  val aPhonebook: Map[String, Int] = Map(
+    ("Daniel", 12323),
+    "Jane" -> 23343 // equivalent to ("Jane", 23343)
+  )
 
 }
